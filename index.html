@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Dancing+Script&display=swap" rel="stylesheet">
+    
+    <link  href="CSS/style.css" rel="stylesheet" >
+    <title> Tic Tac Toe </title>
+</head>
+<body>
+
+    <header>
+        <h1> Get three of your pieces in a row and you WIN ! </h1>
+        <h6 id="rounds"> </h6>
+    </header> 
+
+
+     <div id="players">
+        <label>Player X 
+            <input id="player1" type="text" placeholder="Player name ">
+        </label>
+        <p> <strong>Vs</strong> </p>
+        <label>Player O 
+            <input id="player2" type="text" placeholder="Player name ">
+        </label> 
+        <button id="restart" type="button"> restart </button>
+     </div>
+
+     <div class="container">
+         <p id="turn"> Turn to player X  .  </p>
+         <div class="rwos">
+            <div class="box" id="box1"></div>
+            <div class="box" id="box2"></div>
+            <div class="box" id="box3"></div>
+         </div>
+         <div class="rwos">
+            <div class="box" id="box4"></div>
+            <div class="box" id="box5"></div>
+            <div class="box" id="box6"></div>
+         </div>
+         <div class="rwos">
+            <div class="box" id="box7"></div>
+            <div class="box" id="box8"></div>
+            <div class="box" id="box9"></div>
+         </div>
+     </div>
+
+    <aside>
+        <img src="https://media.giphy.com/media/3oKIPwv9exqYPaB03K/200w_d.gif" alt="Hourglass" >
+    </aside>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script> 
+    <script src="JS/mian.js"></script> 
+
+</body>
+</html>
