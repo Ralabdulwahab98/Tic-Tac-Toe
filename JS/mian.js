@@ -2,21 +2,43 @@
 
 
 // restart button 
-var BUTTON = $("#restart").click( restart );
+let BUTTON = $("#restart").click( restartRound );
 
 
 // <p> to display player turn( X , O )..
    let playerTurn = $("#turn");
-
+// Determine turn of player   
+   let turn = 0;
 
 //  To get all div in game board (container).
   let boxs = $(".box");
 
 
+// <h2> to display player round..
+  let playerRound = $("#rounds");
+// Determine round of player   
+  let rounds = 0 ;
+// Determine Score of player 
+  player1Score = 0;
+  player2Score = 0;
 
-// Determine turn of player   
-  var turn = 0;
 
+function alertDiv(name){
+    let popup = document.createElement('div');
+    popup.style.backgroundColor = 'transparent';
+
+    let maseg = document.createElement('p');
+    maseg.style.fontSize = 'xx-large' ;
+    maseg.append(name + " WIN !");
+
+    popup.appendChild(maseg);
+
+    let ok = document.createElement('button');
+    ok.click(function(){
+        popup.animate({
+        height: 'toggle'});
+    });
+}  
 
  function start() {
 // Get Id of div was clicked , Abd save it in currentBox
@@ -36,7 +58,7 @@ var BUTTON = $("#restart").click( restart );
 
 // call function  winner checking if player wien .         
          winner("X.png" , $("#player1").val() );
-
+        //  round( $("#player1").val() , $("#player2").val() );
 
 // If's odd number so is O turn  
     } else {
@@ -47,6 +69,8 @@ var BUTTON = $("#restart").click( restart );
 
          this.removeEventListener('click',start );
          winner("O.png" , $("#player2").val() ); 
+
+        //  round( $("#player2").val() , $("#player1").val() );
          
     }
 
@@ -63,59 +87,41 @@ function winner(img , player ) {
 // .style.cssTex => undefined || if the boxs (div) was clicked so will return 'background-image....'
 // .includes(img) to check what the image type ( X , O ) .
 if ( boxs[0].style.cssText.includes(img) && boxs[1].style.cssText.includes(img) && boxs[2].style.cssText.includes(img)   ){
-        mySound.play();
-        alert( player + ' WIEN !'); 
-        
-        restart();
+        mySound.play(); 
+        round(player);
     
     }else if (  boxs[3].style.cssText.includes(img) && boxs[4].style.cssText.includes(img) && boxs[5].style.cssText.includes(img)   ){
              mySound.play();
-             alert( player + ' WIEN !'); 
-
-             restart();
+             round(player);
     
     }else if ( boxs[6].style.cssText.includes(img) && boxs[7].style.cssText.includes(img) && boxs[8].style.cssText.includes(img) ){
              mySound.play();
-             alert( player + ' WIEN !');
-
-             restart();
+             round(player);
     
     }else if ( boxs[0].style.cssText.includes(img) && boxs[4].style.cssText.includes(img) && boxs[8].style.cssText.includes(img) ){
               mySound.play();
-              alert( player + ' WIEN !');
-              
-              restart();
+              round(player);
     
     }else if ( boxs[6].style.cssText.includes(img) && boxs[4].style.cssText.includes(img) && boxs[2].style.cssText.includes(img) ){
               mySound.play();
-              alert( player + ' WIEN !');   
-              
-              restart();
+              round(player);   
     
     }else if ( boxs[6].style.cssText.includes(img) && boxs[4].style.cssText.includes(img) && boxs[2].style.cssText.includes(img) ){
               mySound.play();
-              alert( player + ' WIEN !'); 
-              
-              restart();
+              round(player); 
     
     }else if ( boxs[0].style.cssText.includes(img)  && boxs[3].style.cssText.includes(img) && boxs[6].style.cssText.includes(img)  ){
               mySound.play();
-              alert( player + ' WIEN !');   
-              
-              restart();
+              round(player);   
     
     }else if (  boxs[1].style.cssText.includes(img) && boxs[4].style.cssText.includes(img) && boxs[7].style.cssText.includes(img)   ){
               mySound.play();
-              alert( player + ' WIEN !');
-              
-              restart();
+              round(player);
     
     }else if (  boxs[2].style.cssText.includes(img)  && boxs[5].style.cssText.includes(img)  && boxs[8].style.cssText.includes(img)  ){
               mySound.play();
-              alert( player + ' WIEN !'); 
+              round(player);
               
-              restart();
-    
     }
 
 }// END function winner(img , player )
@@ -123,6 +129,21 @@ if ( boxs[0].style.cssText.includes(img) && boxs[1].style.cssText.includes(img) 
 
 for (let i = 0; i < boxs.length; i++) {
     boxs[i].addEventListener('click',start);
+    }
+
+
+
+
+    function round( playerWin ) {
+        rounds +=1 ;
+        if ( playerWin === $("#player1").val() ) {
+            playerRound.text(" Rounds " + rounds +"  "+playerWin+":  "+ (player1Score+=1) +" "+$("#player2").val()+": "+ player2Score );
+        } else {
+            playerRound.text(" Rounds " + rounds +"  "+$("#player2").val()+":  "+ player1Score +" "+playerWin+": "+ (player2Score+=1) );
+        }
+
+        alert( playerWin + ' WIEN !'); 
+        restart();
     }
 
 
@@ -139,10 +160,19 @@ for (let i = 0; i < boxs.length; i++) {
          }
     
         turn = 0 ;
-
-        $("#player1").val('') 
-        $("#player2").val('');
-
         playerTurn.text(" Turn to player X  .  "); 
 
     }// END function restart() ..  
+
+
+    function restartRound(){ 
+
+        rounds = 0 ;
+        $("#player1").val('');
+        $("#player2").val('');
+
+        restart();
+        playerRound.text("");
+
+    }
+
