@@ -13,46 +13,44 @@
 
     <header>
         <h1> Get three of your pieces in a row and you WIN ! </h1>
-        <h6 id="rounds"> </h6>
+        <h2 id="rounds"> Round 0 </h2>
     </header> 
 
+      <p id="turn"> Turn to player X  .  </p>
+
+
+    <div id="main">
 
      <div id="players">
-        <label>Player X 
-            <input id="player1" type="text" placeholder="Player name ">
+        <label> Player X   <strong>Vs</strong>   Player O 
+        <br>
+        <input id="player1" type="text" placeholder="Player name ">
+        <input id="player2" type="text" placeholder="Player name ">
+        <br>
+        <button type="button"> restart </button>
         </label>
-        <p> <strong>Vs</strong> </p>
-        <label>Player O 
-            <input id="player2" type="text" placeholder="Player name ">
-        </label> 
-        <button id="restart" type="button"> restart </button>
      </div>
 
      <div class="container">
-         <p id="turn"> Turn to player X  .  </p>
-         <div class="rwos">
             <div class="box" id="box1"></div>
             <div class="box" id="box2"></div>
             <div class="box" id="box3"></div>
-         </div>
-         <div class="rwos">
             <div class="box" id="box4"></div>
             <div class="box" id="box5"></div>
             <div class="box" id="box6"></div>
-         </div>
-         <div class="rwos">
             <div class="box" id="box7"></div>
             <div class="box" id="box8"></div>
             <div class="box" id="box9"></div>
-         </div>
      </div>
-
-    <aside>
+     
+    <div class="photo">
         <img src="https://media.giphy.com/media/3oKIPwv9exqYPaB03K/200w_d.gif" alt="Hourglass" >
-    </aside>
+    </div>
 
+
+</div>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script> 
-    <script src="JS/mian.js"></script> 
+    <script src="Js/mian.js"></script> 
 
 </body>
 </html>
