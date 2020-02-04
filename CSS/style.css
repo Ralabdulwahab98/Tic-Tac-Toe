@@ -25,11 +25,12 @@ header > #rounds{
     text-align: center;;
     font-size: xx-large;
     font-family: "Times New Roman", Times, serif;
+    background-color: #e7f3fe;
 }
 
 
 
-/* Main div have three divs  ( players , container , photo )  */
+/* Main div have three divs  ( alert , players , container , photo )  */
 
 #main{
     display: flex;
@@ -41,6 +42,10 @@ header > #rounds{
 
 /* styleing contant of players div  */
 
+#players{
+    background-color: #e7f3fe;
+    /* border: 2px solid #2196F3; */
+}
 #players > label{
     text-align: center;
     font-size: 30px;
@@ -51,13 +56,13 @@ button{
     width: 90px;
     height: 70px;
     font-size: large;
-    /* margin: 10px; */
     border-radius: 25px;
 }
 button:hover{
-    width: 110px;
-    height: 100px;
-    background-color: #555555;
+    width: 100px;
+    height: 90px;
+    font-size: x-large;
+    background-color: #69aeee;
     color: white;
 }
 
@@ -69,7 +74,6 @@ button:hover{
 .container {
     display: grid;
     grid-template-columns: auto auto auto;
-  
 }
 
 .box{
@@ -77,8 +81,11 @@ button:hover{
     padding: 20px;
     width: 100px;
     height: 100px;
+    border-radius: 25px;
+    background-color: #e7f3fe;
+    
 
-/* This property for background-image ( X , O ) */
+ /* This propertys for background-image ( X or O ) */
     
     background-repeat: no-repeat;
     background-size: cover;
@@ -87,7 +94,77 @@ button:hover{
 
 }
 
+.box:hover{
+    /* property specifies the mouse cursor to be displayed when pointing over an element. */
+     cursor: progress;
+     background-image: url('https://media.giphy.com/media/l378raRyyx38S1ViE/200w_d.gif'); 
+}
 
 
+/* styleing Alert div */
+.alert {
+    display: none; 
+    position: fixed; 
+    z-index: 1; /* Sit on top of the page */
+    padding-top: 10%;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.4);
+}
+
+.alert-div {
+    margin: 0 auto;
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 250px;
+    height: 150px;
+    border-radius: 25px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+#maseg{
+    color: #69aeee;;
+    font-size: xx-large;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+}  
+  
+/* The Close Button in the ( alert div ) */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover {
+    color: #000;
+    cursor: pointer;
+}
 
 
+ /* #tie{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tie > div{
+    This propertys for background-image if tie 
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    width: 200px;
+    height: 200px;
+} */
