@@ -148,23 +148,3 @@ button:hover{
     color: #000;
     cursor: pointer;
 }
-
-
- /* #tie{
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#tie > div{
-    This propertys for background-image if tie 
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-
-    width: 200px;
-    height: 200px;
-} */
