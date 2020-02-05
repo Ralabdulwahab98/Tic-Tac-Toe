@@ -42,6 +42,9 @@ $('.alert').css({"display":"block"});
   if(name === "TIE" ){
       $('.alert-div').css( {'background-image':'url("https://media.giphy.com/media/iuuOaH3W9JLWg/giphy-downsized.gif")'} );
       $('#maseg').text("" );
+  }else if ( name === ""){
+      $('#maseg').text( " Please write players name.. " ); 
+      $('.alert-div').css( {'background-image':''} );
   }else{ 
       $('#maseg').text( name + " WIN !" ); 
       $('.alert-div').css( {'background-image':''} );
@@ -57,14 +60,18 @@ function start() {
 // start a sound win player click .     
   const buttonSound = new Audio("Button.mp3");
   buttonSound.play();
-
+  
 
 // Get Id of div was clicked , Abd save it in currentBox
   let boxID = $(this).attr('id');
   let currentBox = $('#'+boxID);
 
+
+  if ( ($("#player1").val() === "" ) &&  ( $("#player2").val() === "")  ) {
+      alertDiv("");
+
 // If's even number is X turn  
-  if (turn%2 === 0) {
+  }else if (turn%2 === 0) {
       turn++;
       playerTurn.text(" Turn to player O  .  ");
 
