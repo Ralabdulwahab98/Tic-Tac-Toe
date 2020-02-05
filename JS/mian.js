@@ -38,6 +38,7 @@ function alertDiv(name){
 // div to  display
 $('.alert').css({"display":"block"});  
 
+
   if(name === "TIE" ){
       $('.alert-div').css( {'background-image':'url("https://media.giphy.com/media/iuuOaH3W9JLWg/giphy-downsized.gif")'} );
       $('#maseg').text("" );
@@ -69,8 +70,10 @@ function start() {
 
 // add  imag(x) to the div was clicked 
       currentBox.css( {'background-image':'url("imgs/X.png")'} );
+      currentBox.css( {'cursor':'no-drop'} );
 
-// Get div was clicked , Abd make it un-clickable .        
+// Get div was clicked , Abd make it un-clickable . 
+
        this.removeEventListener('click',start);
 
 // call function  winner checking if player wien .         
@@ -83,8 +86,11 @@ function start() {
        playerTurn.text(" Turn to player X  .  ");
               
        currentBox.css( {'background-image':'url("imgs/O.png")'} );
+       currentBox.css( {'cursor':'no-drop'} );
+       
 
        this.removeEventListener('click',start );
+
        winner("O.png" , $("#player2").val() , turn ); 
 
        
@@ -137,12 +143,10 @@ if ( boxs[0].style.cssText.includes(img) && boxs[1].style.cssText.includes(img) 
   }else if (  boxs[2].style.cssText.includes(img)  && boxs[5].style.cssText.includes(img)  && boxs[8].style.cssText.includes(img)  ){
       winnerSound.play();
             round(player);
+
 // if else all div with class ( .boxs ) was clicked and no condition is true so no one win .    
   }else if (turn === 9) {
       round("TIE");
-      // alert(' NO ONE WIEN !'); 
-      // alertDiv("TIE"); 
-      //  restart();
   }
 
 }
@@ -150,7 +154,9 @@ if ( boxs[0].style.cssText.includes(img) && boxs[1].style.cssText.includes(img) 
 
 // LOOP to make every div with class ( .boxs ) clickebl
 for (let i = 0; i < boxs.length; i++) {
+
   boxs[i].addEventListener('click',start);
+  
   }
 
 // It is function  who someone win in the round..
