@@ -148,3 +148,73 @@ button:hover{
     color: #000;
     cursor: pointer;
 }
+
+
+
+
+@media only screen and (max-width: 960px) { 
+
+#main {
+    /* justify-content: space-around; */
+    display: inline-block;
+    position: absolute;
+    right: 25%;
+    
+}
+
+.container{
+    width: auto;
+}
+
+
+#players{
+    display: flex;
+    justify-content: center; 
+}
+
+.photo{
+    display: flex;
+    justify-content: center; 
+}
+
+
+
+}
+
+
+
+@media only screen and (max-width: 375px) { 
+
+    #main {
+        display: inline-block;
+        position: absolute;
+        right: 15%;
+        
+    }
+    
+    .container{
+        width: auto;
+    }
+    
+
+.box{
+    padding: 20px;
+    width: 50px;
+    height: 50px;
+
+}    
+    #players{
+        display: flex;
+        justify-content: center; 
+    }
+    
+    .photo{
+        display: flex;
+        justify-content: center; 
+    }
+    
+    
+    
+    }
+
+}
