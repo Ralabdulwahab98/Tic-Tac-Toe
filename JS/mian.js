@@ -28,6 +28,12 @@ player2Score = 0;
 
 
 
+// LOOP to make every div with class ( .boxs ) clickebl
+for (let i = 0; i < boxs.length; i++) {
+
+  boxs[i].addEventListener('click',start);
+  
+  }
 
 
 // It is function same alert shows winner..
@@ -158,13 +164,6 @@ if ( boxs[0].style.cssText.includes(img) && boxs[1].style.cssText.includes(img) 
 
 }
 
-
-// LOOP to make every div with class ( .boxs ) clickebl
-for (let i = 0; i < boxs.length; i++) {
-
-  boxs[i].addEventListener('click',start);
-  
-  }
 
 // It is function  who someone win in the round..
   function round( playerWin ) {
